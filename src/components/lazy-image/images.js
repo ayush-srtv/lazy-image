@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 function LazyImage({ component: Component = "img", sources, ...props }) {
-  const [imageRef, setImageRef] = useState([]);
+  const isImage = Component === "img";
+  const [imageRefs, setImageRefs] = useState([]);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {}, []);
 
   const componentProps = {
-    ref: setImageRef,
+    ...(isImage ? { ref: setImageRefs } : {}),
     ...props
   };
 
