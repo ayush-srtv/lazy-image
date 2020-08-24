@@ -1,0 +1,6 @@
+{
+  "name": "lazy-image",
+  "version": "0.0.1-alpha.0",
+  "private": true,
+  "main": "./index.js"
+}
