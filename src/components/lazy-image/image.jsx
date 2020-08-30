@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const LazyImage = ({ src, alt }) => {
+const Image = ({ src, alt }) => {
   const [imageSrc, setImageSrc] = useState("");
   const [imageRef, setImageRef] = useState();
 
@@ -60,4 +60,4 @@ const LazyImage = ({ src, alt }) => {
   );
 };
 
-export default LazyImage;
+export default Image;
