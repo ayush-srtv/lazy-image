@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 const generatePlaceholder = ({
-  color = "wheat",
+  color = "#f7f7f7",
   height = 100,
   width = 100
 }) => {
-  console.log({ height, width });
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
+  canvas.height = "100";
+  canvas.width = "200";
   ctx.fillStyle = color;
   ctx.fillRect(0, 0, width, height);
   return canvas.toDataURL();
