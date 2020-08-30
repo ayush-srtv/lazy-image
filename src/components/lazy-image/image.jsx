@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from "react";
 
-const Image = ({ src, alt }) => {
-  const [imageSrc, setImageSrc] = useState("");
+const generatePlaceholder = ({
+  color = "wheat",
+  height = 100,
+  width = 100
+}) => {
+  console.log({ height, width });
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = color;
+  ctx.fillRect(0, 0, width, height);
+  return canvas.toDataURL();
+};
+
+const Image = ({ src, lqip, alt = "", placeHolder = {}, ...props }) => {
+  const [imageSrc, setImageSrc] = useState(
+    lqip || generatePlaceholder(placeHolder)
+  );
   const [imageRef, setImageRef] = useState();
 
   const onLoad = (event) => {
@@ -56,6 +71,7 @@ const Image = ({ src, alt }) => {
       alt={alt}
       onLoad={onLoad}
       onError={onError}
+      {...props}
     />
   );
 };
