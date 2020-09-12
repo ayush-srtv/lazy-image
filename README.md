@@ -1,2 +1,2 @@
 # lazy-image
-Created with CodeSandbox
+A Lazy Loading component for React Applications.
